@@ -1,0 +1,26 @@
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/comandos-part-1.png
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/comandos-part-2.png
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/bunch_of_things.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/countries.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/empty.pdf
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/empty.tbt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/fortune.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/phrases2.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/phrases.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/skills2.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests_backup/top_skills.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests/countries.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests/empty
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests/empty.pdf
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests/empty.tbt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/unix_tests/phrase.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/arquivos_trybe.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/arquivo.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/data1
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/data2
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/modelo_diretorios.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/nomes.txt
+/home/afelipes/Trybe/m1-fundamentos/b1-unix-shell/videos/teste
+/home/afelipes/Trybe/organizar/block.png
+/home/afelipes/Trybe/organizar/CAPA LINKEDIN_PERFIL PESSOAL03 (3).png
+/home/afelipes/Trybe/organizar/Welcome Days - Turma 19.pdf
