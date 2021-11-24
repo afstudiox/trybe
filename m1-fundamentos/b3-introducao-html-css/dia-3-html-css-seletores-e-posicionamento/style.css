@@ -19,3 +19,48 @@ h1, h2, h3 em{
     border: 1px black solid;
 } 
 
+li{
+    font-size: 20px;
+}
+
+li em{
+    font-weight:700;
+}
+
+a{
+    text-decoration: none;
+}
+
+.lprogram li:nth-of-type(-n+3){
+    color: blue;
+}
+
+/* Não entendi o por que. Orientação do Thiago Medeiros */
+.lprogram li:first-of-type + li {
+    background-color: red;
+}
+
+
+/* Exercicio Bônus para o desafio */
+.laliados li:nth-child(1):hover{
+    background-color: orange;
+}
+
+.laliados li:nth-child(2):hover{
+    background-color: lightgreen;
+}
+
+.laliados li:nth-child(3):hover{
+    background-color: black;
+}
+
+.laliados li:nth-child(4):hover{
+    background-color: yellow;
+}
+
+.laliados li:nth-child(5):hover{
+    background-color: green;
+}
+
+
+
