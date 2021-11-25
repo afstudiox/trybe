@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
-    <style>
+   
+   <style>
       h1 {
         text-align: center;
       }
+
+      ul{
+          list-style-type: none;
+          padding: 0;
+      }
+
+      /* inserção */
+      .container{
+          display: block;
+          text-align: center;
+      }
+
+      /* inserção */
+      .premiacao{
+          text-align: center;
+      }
+    
+      .premiacao li{
+          display: inline-block;
+      }
+
 
       .first {
         background-color: rgb(235, 200, 84);
@@ -15,6 +37,9 @@
         height: 50px;
         text-align: center;
         width: 200px;
+        /* inserção */
+        display: block;
+        margin: auto;
       }
 
       .second {
@@ -23,6 +48,8 @@
         height: 50px;
         text-align: center;
         width: 300px;
+        /* inserção */
+        display: inline-block;
       }
 
       .third {
@@ -31,10 +58,13 @@
         height: 50px;
         text-align: center;
         width: 300px;
+
+        display: inline-block;
       }
 
     </style>
-  </head>
+ 
+</head>
   <body>
     <header>
       <h1>Hackathon Results</h1>
@@ -42,11 +72,13 @@
     <section>
       <ul>
         <li class="first">1º - Equipe 1</li>
-        <li class="second">2º - Equipe 2</li>
-        <li class="third">3º - Equipe 3</li>
+        <div class="container">
+            <li class="second">2º - Equipe 2</li>
+            <li class="third">3º - Equipe 3</li>
+        </div>
       </ul>
     </section>
-    <section>
+    <section class="premiacao">
       <h3>Premiação Primeiro Lugar:</h3>
       <ul>
         <li>| R$ 1000,00 por integrante da equipe |</li>
