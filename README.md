@@ -10,27 +10,27 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 
 ##### Bloco 1: Introdução - Unix & Shell
 
-- [x] 1-3: _[Unix & Shell- Part 1](https://github.com/afstudiox/trybe/tree/exercicios/2.3)_
-- [x] 1-4: _Unix & Shell- Part 2_
+- [x] 1-3: _[Unix & Shell- Part 1](https://github.com/afstudiox/trybe/tree/exercicios/1.3)_
+- [x] 1-4: _[Unix & Shell- Part 2](https://github.com/afstudiox/trybe/tree/exercicios/1.4)_
 
 ##### Bloco 2: Git & GitHub
 
-- [x] 2-1: _O que é e para que serve?_
-- [x] 2-2: _Entendendo os comandos_
-- [x] 2-3: _Internet - Entendendo como ela funciona_
+- [x] 2-1: _[O que é e para que serve?](https://github.com/afstudiox/trybe/tree/exercicios/2.1)_
+- [x] 2-2: _[Entendendo os comandos](https://github.com/afstudiox/trybe/tree/exercicios/2.2)_
+- [x] 2-3: _[Internet - Entendendo como ela funciona](https://github.com/afstudiox/trybe/tree/exercicios/2.3)_
 
 ##### Bloco 3: Introdução - HTML & CSS
 
-- [x] 3-1: _HTML & CSS - Estruturas de página_
-- [x] 3-2: _HTML & CSS - Primeiros passos em CSS_
-- [x] 3-3: _HTML & CSS - Seletores e posicionamento_
-- [x] 3-4: _HTML Semântico_
-- [x] 3-5: _[Projeto - HTML & CSS]()_
+- [x] 3-1: _[HTML & CSS - Estruturas de página](https://github.com/afstudiox/trybe/tree/exercicios/3.1)_
+- [x] 3-2: _[HTML & CSS - Primeiros passos em CSS](https://github.com/afstudiox/trybe/tree/exercicios/3.2)_
+- [x] 3-3: _[HTML & CSS - Seletores e posicionamento](https://github.com/afstudiox/trybe/tree/exercicios/3.3)_
+- [x] 3-4: _[HTML Semântico](https://github.com/afstudiox/trybe/tree/exercicios/3.4)_
+- [x] 3-5: _[Projeto - HTML & CSS](https://github.com/tryber/sd-019-a-project-lessons-learned)_
 
 ##### Bloco 4: Introdução - JavaScript
 
-- [x] 4-1: _JavaScript - Primeiros passos_
-- [x] 4-2: _JavaScript - Array e loop For_
+- [x] 4-1: _[JavaScript - Primeiros passos](https://github.com/afstudiox/trybe/tree/exercicios/4.1)_
+- [x] 4-2: _[JavaScript - Array e loop For](https://github.com/afstudiox/trybe/tree/exercicios/4.2)_
 - [ ] 4-3: _JavaScript - Lógica de Programação e Algoritmos_
 - [ ] 4-4: _JavaScript - Objetos e funções_
 - [ ] 4-5: _[Projeto - Playground Functions]()_
