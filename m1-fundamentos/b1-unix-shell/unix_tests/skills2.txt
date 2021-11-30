@@ -1,9 +1,0 @@
-Internet
-Unix
-Bash
-Javascript
-Python
-C#
-C
-C++
-CSS
