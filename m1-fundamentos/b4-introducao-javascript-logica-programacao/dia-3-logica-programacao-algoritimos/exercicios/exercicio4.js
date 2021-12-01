@@ -13,19 +13,12 @@ for (let l = 0 ; l <= metade ; l++){
   //este loop insere os espaco do lado esquerdo
   for ( let s = metade-l ; s > 0 ; s--){
     linha += space;  
-  }  
+  } 
 
   //este loop insere os asteriscos(*)
-  for(let a = l ; a <= metade  ; a++ ){
+    for(let a = 0 ; a <= l; a++){
     linha += signal;
   }  
-
-
-  //este loop insere os espaco do lado esquerdo
-  for ( let s = metade-l ; s > 0 ; s--){
-    linha += space;  
-  }  
-
 
   console.log(linha);
 }

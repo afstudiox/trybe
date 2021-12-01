@@ -4,6 +4,7 @@ let space = " ";
 
 //este loop é para trocar de linha
 for (let l = 0 ; l < n ; l++){
+  
   //esta linha abaixo zera a varivel "linha" a cada nova linha
   let linha ="";
 
