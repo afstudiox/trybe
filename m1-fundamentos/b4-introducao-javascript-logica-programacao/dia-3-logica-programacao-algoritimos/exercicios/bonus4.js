@@ -1,27 +1,21 @@
-let n = 5;
-let signal = "*";
-let space = "-";
-let metade = Math.trunc(n/2);
-// console.log(metade);
+let n = 7;
+let middle = (n + 1) / 2; //meio da piramide
+let controlLeft = middle;
+let controlRight = middle;
+let symbol = '#';
 
-//este loop é para trocar de linha
-for (let l = 0 ; l <= metade ; l++){
-  
-  //esta linha abaixo zera a varivel "linha" a cada nova linha
-  let linha = "";
-
-  //este loop insere os espaco do lado esquerdo
-  for ( let s = metade-l ; s > 0 ; s--){
-    linha += space;  
-  } 
-
-  //este loop insere os asteriscos(*)
-    for(let a = 0 ; a <= l; a++){
-    linha += signal;
-  }  
-
-  console.log(linha);
+//loop que controla a linha
+for (let line = 1; line <= middle; line += 1){
+  let outputLine = '';
+  for (let col = 1; col <= n; col += 1){
+    //verifica os limites que devem ser impressos os (*) ou ( )
+    if (col == controlLeft || col == controlRight || line == middle){
+      outputLine = outputLine + symbol;
+    }else{
+      outputLine = outputLine + ' ';
+    }
+  }
+  controlRight += 1;
+  controlLeft -= 1;
+  console.log(outputLine);
 }
-
-
-
