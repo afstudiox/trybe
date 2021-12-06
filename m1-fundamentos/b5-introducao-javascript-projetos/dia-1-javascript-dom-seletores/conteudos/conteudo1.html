@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header>
+      <h2 id="page-title">Título</h2>
+      <p id="paragraph" class="parag">Dê uma cor para este parágrafo!</p>
+      <h4 id="subtitle">Subtítulo</h4>
+      <p id="second-paragraph" class="parag">Segundo parágrafo!</p>
+    </header>
+    <script>
+      const paragraph = document.getElementById("paragraph");
+      paragraph.style.color = "red";
+
+      const titulo = document.getElementById("page-title");
+      titulo.innerHTML = "Breaking Bad";
+      titulo.style.fontStyle = "bold";
+      
+      const subtitulo = document.getElementById("subtitle");
+      subtitulo.innerHTML = "Série de Ação";
+      subtitulo.style.fontStyle = "italic";
+      subtitulo.style.color = "gray";
+
+
+      const segundoParagrafo = document.getElementById("second-paragraph");
+      segundoParagrafo.innerHTML = "Data de lançamento desconhecida";
+      segundoParagrafo.style.fontSize = "0.7em";
+
+      const classeParag = document.getElementsByClassName("parag");
+        classeParag[0].style.color = "green";
+      
+      const subTitle = document.getElementsByTagName("h4");
+        subTitle[0].style.color = "orange";
+      
+
+    </script>
+  </body>
+</html>
