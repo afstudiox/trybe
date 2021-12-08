@@ -11,19 +11,23 @@
       const paragraph = document.getElementById("paragraph");
       paragraph.style.color = "red";
 
+      // 1- Recupere o elemento que contém o título da página e faça algo com ele,
+      // como alterá-lo para o nome do seu filme favorito.
       const titulo = document.getElementById("page-title");
-      titulo.innerHTML = "Breaking Bad";
+      titulo.innerText = "Breaking Bad";
       titulo.style.fontStyle = "bold";
       
-      const subtitulo = document.getElementById("subtitle");
-      subtitulo.innerHTML = "Série de Ação";
-      subtitulo.style.fontStyle = "italic";
-      subtitulo.style.color = "gray";
-
-
+      // 2 - Agora recupere o segundo parágrafo e use sua criatividade para
+      //  alterá-lo.
       const segundoParagrafo = document.getElementById("second-paragraph");
       segundoParagrafo.innerHTML = "Data de lançamento desconhecida";
       segundoParagrafo.style.fontSize = "0.7em";
+
+      // 3 - Por fim, recupere o subtítulo e altere-o também.
+      const subtitulo = document.getElementById("subtitle");
+      subtitulo.innerText = "Série de Ação";
+      subtitulo.style.fontStyle = "italic";
+      subtitulo.style.color = "gray";
 
       const classeParag = document.getElementsByClassName("parag");
         classeParag[0].style.color = "green";

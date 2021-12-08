@@ -2,7 +2,7 @@
 //querySelectorAll ==================================
 
 const urgente = document.querySelectorAll(".emergency-tasks");
-urgente[0].style.backgroundColor = "#FF9F84";
+urgente.style.backgroundColor = "#FF9F84";
 
 const naoUrgente = document.querySelectorAll(".no-emergency-tasks");
 naoUrgente[0].style.backgroundColor = "#F9DB5E";
