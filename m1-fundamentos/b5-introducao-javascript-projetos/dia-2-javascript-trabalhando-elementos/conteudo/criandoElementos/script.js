@@ -1,25 +1,28 @@
 // arquivo script.js
 
-//Crie um irmão para elementoOndeVoceEsta .
-
-//criando um novo elemento do mesmo tipo 
-let el01 = document.createElement('section');
-    el01.id='novoIrmaoDoElementoOndeVoceEsta';
-    document.getElementById('elementoOndeVoceEsta').parentNode.append(el01);
-
-
-//Crie um filho para elementoOndeVoceEsta
-let el02 = document.createElement('section');
-    el02.id='novoFilhoDoElementoOndeVoceEsta';
-    document.getElementById('elementoOndeVoceEsta').append(el02);
+    // 1. Crie um irmão para `elementoOndeVoceEsta`.
+const pai = document.getElementById('pai');
+const irmaoElementoOndeVoceEsta = document.createElement('section');
+irmaoElementoOndeVoceEsta.id = 'irmaoElementoOndeVoceEsta';
+pai.appendChild(irmaoElementoOndeVoceEsta);
 
 
-//Crie um filho para primeiroFilhoDoFilho
-let el03 = document.createElement('section');
-    el03.id = 'novoFilhoDoPrimeiroFilhoDoFilho';
-    document.getElementById('primeiroFilhoDoFilho').append(el03);
-    
+// 2. Crie um filho para `elementoOndeVoceEsta`.
+const elementoOndeVoceEsta = document.getElementById('elementoOndeVoceEsta');
+const filhoElementoOndeVoceEsta = document.createElement('section');
+filhoElementoOndeVoceEsta.id = 'filhoElementoOndeVoceEsta';
+elementoOndeVoceEsta.appendChild(filhoElementoOndeVoceEsta);
 
-//A partir desse filho criado, acesse terceiroFilho
-console.log(document.getElementById('novoFilhoDoPrimeiroFilhoDoFilho').parentNode.parentNode.parentNode.children[2]);
+ // 3. Crie um filho para `primeiroFilhoDoFilho`.
+ const primeiroFilhoDoFilho = document.getElementById('primeiroFilhoDoFilho');
+ const filhoPrimeiroFilhoDoFilho = document.createElement('section');
+ filhoPrimeiroFilhoDoFilho.id = 'filhoPrimeiroFilhoDoFilho';
+ primeiroFilhoDoFilho.appendChild(filhoPrimeiroFilhoDoFilho);
 
+// 4. A partir desse filho criado, acesse `terceiroFilho`
+const terceiroFilho = filhoPrimeiroFilhoDoFilho
+.parentElement //primeiroFilhoDoFilho
+.parentElement //elementoOndeVoceEsta
+.nextElementSibling; //terceiroFilho
+
+console.log(terceiroFilho);
