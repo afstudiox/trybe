@@ -72,22 +72,22 @@ Implemente uma função que adicione ao botão "Feriados" um evento de "click" q
 
 // colocando uma escuta no botao 'holiday'
 btnHoliday.addEventListener('click',fillHolyday);
-let check = false;
+let checkHoliday = false;
 
 function fillHolyday(origin){
   let holydayDays = document.querySelectorAll('.holiday'); 
-  if (check == false){
+  if (checkHoliday == false){
     for (let i = 0; i < holydayDays.length; i += 1){
         holydayDays[i].style.backgroundColor='yellow';
         origin.target.style.backgroundColor='yellow';
     }
-    check = true;
+    checkHoliday = true;
   }else{
     for (let i = 0; i < holydayDays.length; i += 1){
       holydayDays[i].style.backgroundColor='rgb(238,238,238)';
       origin.target.style.backgroundColor='rgb(238,238,238)';
   }
-  check = false;
+  checkHoliday = false;
   }
 }
 
@@ -97,15 +97,14 @@ Implemente uma função que receba como parâmetro a string "Sexta-feira" e crie
 Adicione a este botão o ID "btn-friday" .
 Adicione este botão como filho/filha da tag <div> com classe "buttons-container" .
 */
-// chamando a função com a string como parametro
-fridayF('Sexta-Feira');
-
+const btnFriday = document.createElement('button');
 function fridayF(param){
-  btnFriday = document.createElement('button');
   btnFriday.innerHTML=param;
   btnFriday.id='btn-friday';
   btnContainer.appendChild(btnFriday); // a variavel btnContainer já foi criada anteriormente e pode ser reutilizada
 }
+fridayF('Sexta-Feira');
+
 
 /*
 Exercício 5:
@@ -113,4 +112,22 @@ Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click
 É interessante que este botão possua também a lógica inversa. Ao ser clicado novamente ele retorna à configuração inicial exibindo os dias.
 */
 
+btnFriday.addEventListener('click',fillFriday);
+let checkFriday = false;
 
+function fillFriday(origin){
+  let fridayDays = document.querySelectorAll('.friday');
+  // let bkpFridayDays = [];
+  if (checkFriday == false){
+    for(let i = 0; i < fridayDays.length; i += 1){
+      fridayDays[i].innerText='🍺';
+    }
+    checkFriday=true;
+  }else{
+    for(let i = 0; i < fridayDays.length; i += 1){
+      console.log(fridayDays[i]);
+      fridayDays[i];
+    }
+    checkFriday=false;
+  }
+}
