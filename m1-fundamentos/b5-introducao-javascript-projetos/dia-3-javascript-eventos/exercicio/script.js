@@ -114,20 +114,154 @@ Implemente uma função que adicione ao botão "Sexta-feira" um evento de "click
 
 btnFriday.addEventListener('click',fillFriday);
 let checkFriday = false;
+var copyFriday = [];
 
 function fillFriday(origin){
   let fridayDays = document.querySelectorAll('.friday');
-  // let bkpFridayDays = [];
+ 
+
   if (checkFriday == false){
     for(let i = 0; i < fridayDays.length; i += 1){
+      copyFriday.push(fridayDays[i].innerText);
       fridayDays[i].innerText='🍺';
     }
     checkFriday=true;
   }else{
     for(let i = 0; i < fridayDays.length; i += 1){
-      console.log(fridayDays[i]);
-      fridayDays[i];
+      fridayDays[i].innerHTML = copyFriday[i];
     }
-    checkFriday=false;
+    checkFriday=false;   
+    copyFriday=[];
+  }
+  console.log(copyFriday);
+}
+
+/*
+Exercício 6:
+Implemente duas funções que criem um efeito de "zoom". Ao passar o ponteiro do mouse em um dia do mês no calendário, o texto desse dia deve aumentar e, quando o ponteiro do mouse sair do dia, o texto deve retornar ao tamanho original.
+*/
+
+const allDays = document.querySelectorAll('.day'); 
+
+function moreZoom(origin){
+  origin.target.style.fontSize='25px';
+}
+
+function lessZoom(origin){
+  origin.target.style.fontSize='20px';
+}
+
+for(let i of allDays){
+  i.addEventListener('mouseover',moreZoom);
+  i.addEventListener('mouseleave',lessZoom);
+}
+
+/*
+Exercício 7:
+Implemente uma função que adiciona uma tarefa personalizada ao calendário. A função deve receber como parâmetro a string com o nome da tarefa (ex: "cozinhar") e criar dinamicamente um elemento com a tag <span> contendo a tarefa.
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+*/
+
+
+function addTask(){
+  const task = document.createElement('span');
+  const taskInput = 'Estudar para Prova';
+  
+  task.innerText = taskInput;
+  myTasks.appendChild(task);
+}
+
+const myTasks = document.querySelector('.my-tasks')
+addTask();
+
+/*
+Exercício 8:
+Implemente uma função que adiciona uma legenda com cor para a tarefa criada no exercício anterior. 
+Esta função deverá receber como parâmetro uma string ("cor") e criar dinamicamente um elemento de tag <div> com a classe task .
+O parâmetro cor deverá ser utilizado como cor de fundo da <div> criada.
+O elemento criado deverá ser adicionado como filho/filha da tag <div> que possui a classe "my-tasks" .
+*/
+
+const divLabel = document.createElement('div');
+
+function labelTask(color){
+  divLabel.classList.add('task');
+  divLabel.style.backgroundColor=color;
+  myTasks.appendChild(divLabel);
+}
+
+labelTask('orange');
+
+/* 
+Exercício 9:
+Implemente uma função que adiciona um evento que, ao clicar no elemento com a tag <div> referente a cor da sua tarefa, atribua a este elemento a classe task selected , ou seja, quando sua tarefa possuir a classe task selected , ela estará selecionada.
+Ao clicar novamente no elemento, a sua classe deverá voltar a ser somente task , ou seja, esta tarefa está deixando de ser uma tarefa selecionada.
+*/
+
+function activeSelected(event){
+  if (checkSelected==false){
+    event.target.classList.add('selected');
+    checkSelected =true;
+  }else{
+    event.target.classList.remove('selected');
+    checkSelected =false;
+  }
+  
+}
+
+divLabel.addEventListener('click',activeSelected)
+let checkSelected = false;
+
+
+/* 
+Exercício 10:
+Implemente uma função que adiciona um evento que, ao clicar em um dia do mês no calendário, atribua a este dia a cor da legenda da sua tarefa selecionada.
+Ao clicar novamente no dia com a cor da legenda, a sua cor deverá voltar à configuração inicial rgb(119,119,119) .
+*/
+
+function taskDay(origin){
+  if (checkSelected==true){
+    if (origin.target.style.backgroundColor != divLabel.style.backgroundColor){
+      origin.target.style.backgroundColor=divLabel.style.backgroundColor;
+    }else{
+      origin.target.style.backgroundColor='#EEEEEE';
+    }
   }
 }
+
+for(let i of allDays){
+  i.addEventListener('click',taskDay);
+}
+
+/*
+Bônus:
+Vamos adicionar compromissos ao seu calendário? 
+Implemente uma função que, ao digitar um compromisso na caixa de texto "COMPROMISSOS", adiciona o item à lista "MEUS COMPROMISSOS" ao clicar no botão "ADICIONAR".
+Se nenhum caractere for inserido no campo input , a função deve retornar um alert com uma mensagem de erro ao clicar em "ADICIONAR".
+Ao pressionar a tecla "enter" o evento também deverá ser disparado.
+Dica - Propriedade: key .
+*/
+
+
+function addcommitment(origin){
+  const commitment = document.createElement('li');
+  if(commitmentInput.value != '')
+  {
+    if (origin.which == 13 || origin.target==btnCommitment)
+    {
+      commitment.innerText = commitmentInput.value;
+      myCommitment.appendChild(commitment);
+    } 
+  }else{
+    if (origin.target==btnCommitment)
+    {
+    alert('O campo compromisso não pode estar vazio');
+    }
+  }
+}
+
+const myCommitment = document.querySelector('.task-list')
+const btnCommitment = document.querySelector('#btn-add');
+const commitmentInput = document.querySelector('#task-input');
+btnCommitment.addEventListener('click',addcommitment);
+commitmentInput.addEventListener('keypress',addcommitment);

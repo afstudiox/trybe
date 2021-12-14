@@ -35,6 +35,7 @@ button {
   text-align: center;
   vertical-align: middle;
   width: 13.6%;
+  height: 30px;
 }
 
 .input-container {
@@ -53,6 +54,10 @@ label {
   font-weight: 500;
   letter-spacing: 2px;
   vertical-align: middle;
+}
+
+.day{
+  height: 30px;
 }
 
 .month-container {
@@ -82,15 +87,15 @@ label {
   border-radius: 100%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   display: inline-block;
-  height: 35px;
+  height: 20px;
   margin-left: 10px;
   vertical-align: middle;
-  width: 35px;
+  width: 20px;
 }
 
 .my-tasks div:hover {
-  height: 45px;
-  width: 45px;
+  height: 35px;
+  width: 35px;
 }
 
 .my-tasks span {
@@ -100,6 +105,7 @@ label {
   letter-spacing: 3px;
   padding-bottom: 10px;
   vertical-align: middle;
+  margin-left: 10px ;
 }
 
 .tasks-container {
