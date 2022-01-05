@@ -1,0 +1,51 @@
+// funcao para criar o menu de estados 
+const uf = document.querySelector('#uf');
+
+function criaUF(){
+    let ufBrasil = [
+        'Acre',
+        'Alagoas',
+        'Amapá',
+        'Amazonas',
+        'Bahia',
+        'Ceará',
+        'Distrito Federal',
+        'Espírito Santo',
+        'Goiás',
+        'Maranhão',
+        'Mato Grosso',
+        'Mato Grosso do Sul',
+        'Minas Gerais',
+        'Pará',
+        'Paraíba',
+        'Paraná',
+        'Pernambuco',
+        'Piauí',
+        'Rio de Janeiro',
+        'Rio Grande do Norte',
+        'Rio Grande do Sul',
+        'Rondônia',
+        'Roraima',
+        'Santa Catarina',
+        'São Paulo',
+        'Sergipe',
+        'Tocantins'
+        ]
+        for (index of ufBrasil){
+            let elOption = document.createElement('option');
+            elOption.value=index;
+            elOption.innerHTML=index;
+            uf.appendChild(elOption);
+    }
+}
+criaUF();
+
+
+const dtInicio = document.querySelector('dt-inicio');
+
+function validaData(){
+    console.log(dtInicio.value)
+}
+
+dtInicio.addEventListener('keypress', validaData);
+
