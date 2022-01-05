@@ -1,7 +1,6 @@
 // funcao para criar o menu de estados 
-const uf = document.querySelector('#uf');
-
 function criaUF(){
+    let uf = document.querySelector('#uf');
     let ufBrasil = [
         'Acre',
         'Alagoas',
@@ -38,14 +37,14 @@ function criaUF(){
             uf.appendChild(elOption);
     }
 }
-criaUF();
 
-
-const dtInicio = document.querySelector('dt-inicio');
-
-function validaData(){
-    console.log(dtInicio.value)
+function handleSubmit(event){
+    event.preventDefault();
 }
 
-dtInicio.addEventListener('keypress', validaData);
+window.onload = function(){
+    criaUF();
 
+    let button = document.querySelector('.btn-enviar');
+    button.addEventListener('click',handleSubmit);
+}
