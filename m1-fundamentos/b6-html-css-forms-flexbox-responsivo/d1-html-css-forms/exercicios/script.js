@@ -12,13 +12,6 @@ function criaUF(){
     }
 }
 
-function checkDate(){
-   console.log(Date.parse(date.value));
-   console.log(Date.parse(date.value) instanceof Date && !isNaN(Date.parde(date.value)));
-}
-
-
 window.onload = function(){
     criaUF();
-    checkDate();
 }
