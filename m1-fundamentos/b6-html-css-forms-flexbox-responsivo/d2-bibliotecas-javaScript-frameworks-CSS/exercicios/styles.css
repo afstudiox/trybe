@@ -21,3 +21,8 @@ button{
 textarea{
     margin-top: 10px;
 }
+
+.fieldset-container{
+    padding: 20px;
+    margin-bottom: 20px;
+}
