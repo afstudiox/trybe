@@ -1,0 +1,77 @@
+/*
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * apply a natural box layout model to all elements, but allowing components to change
+ */
+ html {
+    /* 1rem = 16px = 100% (User-Agent) então 10px será o novo padrão*/
+    font-size: 62.5%;
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    font-size: 2rem;
+    margin: 5%;
+  }
+  
+  article {
+  
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+  
+  }
+  
+  img {
+      max-width: 100%;
+  }
+  
+  main {
+  
+  }
+  
+  section {
+    
+  }
+  
+  figure {
+      margin: 0;
+      margin-bottom: 30px;
+  }
+  
+  figcaption {
+    font-size: .8em;
+  }
+
+  @media screen and (min-width: 500px) {
+    body{
+          background-color: rgb(219, 203, 148);
+          font-size: 1.5rem;
+          margin: 10%;
+      }
+
+    section {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    figure{
+        flex-basis: 50%;
+    }
+  }
+
+  @media screen and (min-width: 1100px) {
+    body{
+        background-color: rgb(190 191 160);
+        font-size: 1.8rem;
+        margin: 10% 15%;
+        max-width: 1200px;
+    }
+  }

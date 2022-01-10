@@ -1,0 +1,146 @@
+[33mcommit 4ffa984abab74b928816839288665b27467b86d0[m[33m ([m[1;36mHEAD -> [m[1;32mexercicios/6.1[m[33m, [m[1;31morigin/exercicios/6.1[m[33m, [m[1;32mexercicios/6.2[m[33m)[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Jan 5 15:09:37 2022 -0300
+
+    Exercicio dia 01 bloco 6 incompleto ainda
+
+[33mcommit 43cee72517660a64bb8658ab3d9d36f84228b60e[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Jan 4 22:10:56 2022 -0300
+
+    Exercicio dia 01 bloco 6 incompleto
+
+[33mcommit 7cadb8f79031058b0e094ec57194396d5500c52d[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Jan 4 16:00:37 2022 -0300
+
+    Método de evento preventDefault ()
+
+[33mcommit b1aae3a0ec82ad65be0835a823913dfe82da681b[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Jan 4 15:22:26 2022 -0300
+
+    Criando uma tela de login
+
+[33mcommit 19f86a6cb3b8b9555d481b4c59f3347362dc60ab[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 30 11:38:00 2021 -0300
+
+    Update README.md
+    
+    Adicionando links para as branches até o dia de hoje. (Exercicio 4.1)
+
+[33mcommit 946b8158399c508bbbcd2d6b6be14aeca57db191[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 30 11:31:52 2021 -0300
+
+    Update README.md
+
+[33mcommit aedd1e09fd62baa21d033a416ecd2e3152008c1c[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 30 11:28:26 2021 -0300
+
+    Organizando Arquivos e Pastas
+
+[33mcommit 0a86d6dc4d7a00fabfe1513cd50d19bb313c40f5[m
+Merge: 3cfef38 930f6ca
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 30 11:20:17 2021 -0300
+
+    Merge branch 'main' of github.com:afstudiox/trybe into main
+
+[33mcommit 3cfef38addf5c1c7d16a49fc7f9f22c13de2f664[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 30 11:19:41 2021 -0300
+
+    Organizando Arquivos e Pastas
+
+[33mcommit 930f6ca02b617fb45338c124fceeb5ec1cf0fce4[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 30 10:54:56 2021 -0300
+
+    Update README.md
+
+[33mcommit 1c212f432275fdd8113f3fe16466349f2fa5f777[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Sun Nov 28 09:08:00 2021 -0300
+
+    Update README.md
+
+[33mcommit 5baf322b9ba16584707bc0d74f47112bfa33da45[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 20:15:31 2021 -0300
+
+    revisão de pastas ... algumas deletadas por serem obsoletas ou duplicadas
+
+[33mcommit 113390477bcd305d113a1fa93a49c2b466500709[m
+Merge: f04a5f6 d897ac6
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 19:00:12 2021 -0300
+
+    Merge pull request #3 from afstudiox/trybe-skills-updates
+    
+    Adicionando 1 nova Skill
+
+[33mcommit d897ac60c2ade624f893900a4784da0277ae6c03[m
+Merge: 348ea7e f04a5f6
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:59:55 2021 -0300
+
+    Merge branch 'main' into trybe-skills-updates
+
+[33mcommit f04a5f69f6ca81979485c0e610c05071f2901ea9[m
+Merge: 66cc93a 8b2f0c1
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:58:03 2021 -0300
+
+    Merge pull request #2 from afstudiox/trybe-skills-changes
+    
+    Adicionando 2 novas Skill
+
+[33mcommit 348ea7ecd7b9e34506c5d0088c3a4ec9ec1b75ea[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:53:18 2021 -0300
+
+    Adicionando 1 nova Skill
+
+[33mcommit 8b2f0c1d1217bc843fae83966fec06fc4179ee64[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:46:50 2021 -0300
+
+    Adicionando 2 novas Skill
+
+[33mcommit 66cc93a4b4daea21d35dc58941b969b1c894db13[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:39:50 2021 -0300
+
+    subindo trybe-skills.txt para começar
+
+[33mcommit e22ce80ee1892572596fa3335b436223df56b896[m
+Merge: 807dc00 818f439
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:19:33 2021 -0300
+
+    Merge pull request #1 from afstudiox/branch-update
+    
+    Update README.md
+
+[33mcommit 818f439a70486348b19bd73f3d5db052975d6256[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Wed Nov 17 18:15:35 2021 -0300
+
+    Update README.md
+    
+    Adicionando mais um foguete
+
+[33mcommit 807dc001ca84c0950f106b3c9cfd487a802441da[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 16 20:39:28 2021 -0300
+
+    UPDATE README.md commit
+
+[33mcommit 8e932085444d0c44e491ef1d6f7100a2644d4268[m
+Author: Andre Felipe <afelipes@gmail.com>
+Date:   Tue Nov 16 20:20:12 2021 -0300
+
+    Initial commit
