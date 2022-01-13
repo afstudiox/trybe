@@ -15,13 +15,37 @@
   <button id='button'>Somar</button>
   <p id='result'></p>
   <script>
-    function sum() {
-      const value1 = document.getElementById('value1').value;
-      const value2 = document.getElementById('value2').value;
-      const result = parseInt(value1) + parseInt(value2);
-      document.getElementById('result').innerHTML = `Resultado: ${result}`;
-      document.getElementById('value1').value = '';
-      document.getElementById('value2').value = '';
+    
+    //função que verifica se é um numero
+    const notEmpty = (value1, value2) => {
+      if (!value1 || !value2){
+        throw new Error ('Nenhum campo pode estar em branco!')
+      }
+    }
+
+    //função que verifica se é um numero
+    const isNumber = (value1, value2) => {
+      if (isNaN(value1) || isNaN(value2)){
+        throw new Error ('Somente números são válidos!');
+      }
+    }
+    
+
+    const sum = (value1, value2) => {
+      try{
+        const value1 = document.getElementById('value1').value;
+        const value2 = document.getElementById('value2').value;
+        notEmpty(value1, value2);
+        isNumber(value1, value2);
+        const result = parseInt(value1) + parseInt(value2);
+        document.getElementById('result').innerHTML = `Resultado: ${result}`;
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }catch (error){
+        document.getElementById('result').innerHTML = `Erro: ${error.message}`;
+        document.getElementById('value1').value = '';
+        document.getElementById('value2').value = '';
+      }
     }
     window.onload = () => {
       const button = document.getElementById('button');
