@@ -29,7 +29,7 @@
 //   return array;
 // }
 
-// console.log(`Os números ${ordenaNumbers(oddsAndEvens)} se encontram ordenados de forma crescente!.`);
+// console.log(`Os números ${ordenaNumbers(oddsAndEvens)} se encontram ordenados de forma crescente utilizando o método "SORT"!`);
 
 // PARTE 1 - BÔNUS      =================================================================
 
@@ -37,4 +37,4 @@ const oddsAndEvens = [13, 3, 4, 10, 7, 2];
 
 oddsAndEvens.sort((a,b)=>{return a-b });
 
-console.log(oddsAndEvens); // será necessário alterar essa linha 😉
+console.log(`Os números ${oddsAndEvens} se encontram ordenados de forma crescente!`); 
