@@ -32,20 +32,21 @@ const sorteio = (aposta) => {
 
 const gabarito = ['A', 'C', 'B', 'D', 'A', 'A', 'D', 'A', 'D', 'C'];
 const resposta = ['A', 'N.A', 'B', 'D', 'A', 'C', 'N.A', 'A', 'D', 'B'];
-let resultado = 0;
 
 const check = (arr1,arr2) => {
-  for (let index = 1; index <= gabarito.length; index += 1){
+  let resultado = 0;
+  for (let index = 0; index < gabarito.length; index += 1){
     if (arr1[index] === arr2[index]){
-      resultado = resultado + 1;
-    }else if(arr2[index] === 'N.A'){
-      resultado = resultado;
+      resultado += 1;
     }
-    resultado = resultado - 0.5;
+    if(arr1[index] !== arr2[index] && arr2 !== 'N.A'){
+      resultado -= 0.5;
+    }
   }
   return resultado;
-}
+  };
 
-check(gabarito,resposta);
-console.log(resultado);
+const studentsPoints = (array1,array2,funcao) => funcao(array1,array2);
+
+console.log(studentsPoints(gabarito,resposta,check));
 
