@@ -8,3 +8,4 @@ const findDivisibleBy3And5 = numbers.find((item) => isDivisible(item));
 
 //exibindo resultado na tela
 console.log(findDivisibleBy3And5);
+
