@@ -4,11 +4,6 @@ const musicas = [
   { id: '31031687', title: 'Chaconne, Partita No. 2 BWV 1004' },
 ]
 
-
-const findMusic = (id) =>{
-  return musicas.find((chave)=>{
-    return chave.id === id;
-  });
-}
+const findMusic = (id) => musicas.find((musica) => musica.id === id);
 
 console.log(findMusic('31031685'))
