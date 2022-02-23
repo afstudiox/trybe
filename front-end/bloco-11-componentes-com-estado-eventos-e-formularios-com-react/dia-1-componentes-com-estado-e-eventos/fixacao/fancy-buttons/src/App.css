@@ -1,0 +1,12 @@
+.container-btn {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+}
+
+button {
+  margin: 20px 100px;
+  width: 150px;
+  height: 50px;
+}
