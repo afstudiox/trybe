@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- Import myCSS -->
+    <link rel="stylesheet" href="styles.css">
+    <title>Cadastro de Curriculos</title>
+</head>
+<body>
+
+    <main>
+         <form>
+            <fieldset><legend>Cadastro de Currículo</legend>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <label for="nome" class="active">Nome</label>
+                        <input id="nome" name="nome" class="validate" type="text" maxlength="40" required>
+                    </div>
+                </div>
+                <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" maxlength="50" required>
+                </div>
+                <div>
+                    <label for="cpf">CPF</label>
+                    <input id="cpf" name="cpf" type="text" maxlength="11" required>
+                </div>
+                <div>
+                    <label for="endereco">Endereço</label>
+                    <input id="endereco" name="endereco" type="text" maxlength="200" required>
+                </div>
+                <div>
+                    <label for="uf">Estado</label>
+                    <select name="uf" id="uf"></select>
+                </div>
+
+                <div>
+                    <label for="tipo">Tipo do Imóvel</label>
+                    <label for="casa"><input id="casa" name="tipo" type="radio">Casa</label>
+                    <label for="apto"><input id="apto" name="tipo" type="radio">Apartamento</label>
+                </div>
+                
+            </fieldset>
+
+            <fieldset><legend>Seu último emprego</legend>
+                <div>
+                    <label for="resumo">Resumo do Currículo</label>
+                </div>
+                <div>
+                    <textarea id="resumo" maxlength="1000" cols="100" rows="8" required></textarea>
+                </div>
+                
+                <div>
+                    <label for="cargo">Cargo<input id="cargo" name="cargo" type="text"></label>
+                </div>
+                <div>
+                    <label for="desc-cargo">Descrição do cargo<input id="desc-cargo" name="desc-cargo" type="text"></label>
+                </div>
+                <div>
+                    <label for="dt-inicio">Data de Início<input id="dt-inicio" name="dt-inicio" type="text"></label>
+                </div>                
+            </fieldset>
+
+            <div>
+                <button id="btn-enviar">Enviar</button>
+                <button id="btn-limpar">Limpar</button>
+            </div>
+
+        </form>
+    </main>
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Compiled myScript -->
+    <script src="script.js"></script>
+</body>
+</html>
