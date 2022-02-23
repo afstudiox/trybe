@@ -4,31 +4,56 @@ h1 {
 
 form {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 70%;
   margin: 0 auto;
   font-size: 1.5rem;  
 }
 
 input {
-  width: 70%;
+  width: 90%;
   padding: 8px;
-  margin: 10px;
+  margin: 10px auto;
   font-size: 1.5rem;
+  border-radius: 8px;
 }
 
 textarea {
-  width: 70%;
+  width: 90%;
   height: 300px;
   padding: 8px;
-  margin: 10px;
+  margin: 10px auto;
   font-size: 1.5rem;
+  border-radius: 8px;
 }
 
 select {
-  width: 72%;
+  width: 92%;
   padding: 8px;
-  margin: 10px;
+  margin: 10px auto;
   font-size: 1.5rem;  
+  border-radius: 8px;
+}
+
+label {
+  display: block;
+  text-align: center;
+  width: 70%;
+  padding: 8px;
+  margin: 10px auto;
+  font-size: 1.5rem;
+}
+
+fieldset {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+  font-size: 1.5rem;  
+  border-color: aquamarine;
+  background-color: rgba(127, 255, 212, 0.445);
+  border-radius: 20px;
 }
