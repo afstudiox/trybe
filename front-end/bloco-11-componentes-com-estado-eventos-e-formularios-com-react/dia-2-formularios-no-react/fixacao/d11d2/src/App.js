@@ -1,5 +1,7 @@
 import './App.css';
 import React, { Component } from 'react'
+import Agree from './Agree';
+import Name from './Name';
 
 class Form extends Component {
 
@@ -12,7 +14,8 @@ class Form extends Component {
       txtComment: '',
       tipoCliente: '',
       ckAgree: false,
-      file: ''
+      file: '',
+      formularioComErros: ''
     };
   }
 
@@ -23,6 +26,13 @@ class Form extends Component {
     this.setState({
       [name]: value
     })
+  }
+
+  handleErros = () => {
+    this.setState({
+      formularioComErros: true
+    })
+    console.log('teste')
   }
 
 
@@ -41,14 +51,13 @@ class Form extends Component {
                 <option value="Cliente">Cliente</option>
                 <option value="Visitante">Visitante</option>
               </select>
+
+              <Name 
+                value={this.state.txtText} 
+                handleChange={this.handleChange}
+                handleErros={this.handleErros}
+              />
               
-              <input 
-                name="txtText" 
-                type="text"
-                onChange={this.handleChange}
-                value={this.state.txtText}
-              >
-              </input>
               
               <input 
                 name="txtPassword"
@@ -74,16 +83,11 @@ class Form extends Component {
               >        
               </textarea>
               
-              <label htmlFor="ckAgree">Concordo com os termos de acesso.
-                <input 
-                  type="checkbox"
-                  name="ckAgree"  
-                  onChange={this.handleChange}
-                  value={this.state.ckAgree}
-                >
-                </input>
+              <Agree 
+                value={this.state.ckAgree} 
+                handleChange={this.handleChange} 
+              />
 
-              </label>
             </fieldset>
           </form>
 
