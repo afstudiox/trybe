@@ -1,0 +1,10 @@
+* {
+  margin: 50px 20px;
+  text-align: center;
+}
+
+.jokeCurrent {
+  background-color: azure;
+  padding: 10px;
+  text-align: center;
+}
