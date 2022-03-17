@@ -41,3 +41,4 @@ test('Verificando se o botão e o campo email estão funcionando.', () => {
   expect(inputEMail).toHaveValue('');
   expect(textEmail).toHaveTextContent(`Valor: ${ EMAIL_USER }`);
 });
+
