@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/redux@latest/dist/redux.min.js"></script>
+    <style>
+      body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+
+      #container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: orange;
+      }
+
+      button {
+        height: 50px;
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>Color: <span id="value">white</span></p>
+      <button id="previous">Previous color</button>
+      <button id="next">Next color</button>
+    </div>
+    <script>
+      
+      // ESTADO INICIAL DA APLICAÇÃO
+      const ESTADO_INICIAL = {
+        colors: ['white', 'black', 'red', 'green', 'blue', 'yellow'],
+        index: 0,
+      };
+
+      // CONTANTES AUXILIARES
+      const max = ESTADO_INICIAL.colors.length-1;
+      const min = 0;
+    
+      
+      // REDUCER
+      const reducer = (state = ESTADO_INICIAL, action) => {
+        switch (action.type) {
+          case 'NEXT':
+            return { ...state, 
+              index: state.index >= max
+                ? state.index 
+                : state.index + 1}
+
+          case 'PREVIOUS':
+            return {...state, 
+              index: state.index <= min 
+                ? state.index 
+                : state.index - 1}
+    
+          default: return state;
+        }
+      };
+
+           
+      // STORE
+      const store = Redux.createStore(reducer, 
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+      
+      // ACTIONS
+      const NEXT_COLOR = () => ({type: 'NEXT'});
+      const PREVIOUS_COLOR = () => ({type: 'PREVIOUS'});
+
+      // INTERAÇÕES
+      const btnNext = document.getElementById('next');
+      const btnPrevious = document.getElementById('previous');
+
+      btnNext.addEventListener('click', ()=> store.dispatch(NEXT_COLOR()));
+      btnPrevious.addEventListener('click', ()=> store.dispatch(PREVIOUS_COLOR()));
+
+      store.subscribe((state)=>{
+        const globalState = store.getState();
+        const { index, colors } = globalState;
+
+        const value = document.getElementById('value');
+        value.innerHTML= colors[index];
+
+        const backGround = document.getElementById('container');
+        backGround.style.backgroundColor = colors[index];
+      });
+     
+
+    </script>
+  </body>
+</html>
