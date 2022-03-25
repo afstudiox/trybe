@@ -32,6 +32,7 @@
       <p>Color: <span id="value">white</span></p>
       <button id="previous">Previous color</button>
       <button id="next">Next color</button>
+      <button id="random">Random color</button>
     </div>
     <script>
       
@@ -41,9 +42,16 @@
         index: 0,
       };
 
-      // CONTANTES AUXILIARES
-      const max = ESTADO_INICIAL.colors.length-1;
-      const min = 0;
+      // FUNÇÕES AUXILIARES
+      function criarCor() {
+        const oneChar = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
+        let cor = '#';
+        const aleatorio = () => Math.floor(Math.random() * oneChar.length);
+        for (let i = 0; i < 6; i += 1) {
+          cor += oneChar[aleatorio()];
+        }
+        return cor;
+      }
     
       
       // REDUCER
@@ -51,16 +59,23 @@
         switch (action.type) {
           case 'NEXT':
             return { ...state, 
-              index: state.index >= max
+              index: state.index >= state.colors.length - 1
                 ? state.index 
                 : state.index + 1}
 
           case 'PREVIOUS':
             return {...state, 
-              index: state.index <= min 
+              index: state.index <= 0 
                 ? state.index 
                 : state.index - 1}
-    
+
+          case 'RANDOM':
+            return ({
+              ...state, 
+              colors: [...state.colors, criarCor() ],
+              index: state.colors.length
+            });
+          
           default: return state;
         }
       };
@@ -74,14 +89,18 @@
       // ACTIONS
       const NEXT_COLOR = () => ({type: 'NEXT'});
       const PREVIOUS_COLOR = () => ({type: 'PREVIOUS'});
+      const RANDOM_COLOR = () => ({type: 'RANDOM'});
 
       // INTERAÇÕES
       const btnNext = document.getElementById('next');
       const btnPrevious = document.getElementById('previous');
+      const btnRandom = document.getElementById('random');
 
       btnNext.addEventListener('click', ()=> store.dispatch(NEXT_COLOR()));
       btnPrevious.addEventListener('click', ()=> store.dispatch(PREVIOUS_COLOR()));
+      btnRandom.addEventListener('click', () => store.dispatch(RANDOM_COLOR()));
 
+      // ATUALIZAÇÕES DE TELA
       store.subscribe((state)=>{
         const globalState = store.getState();
         const { index, colors } = globalState;
