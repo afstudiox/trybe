@@ -11,6 +11,8 @@ const sumMultiply = (a, b, c) => {
   return promisse;
 }
 
-sumMultiply(10,20,30)
-  .then(result => console.log(`sucesso: ${result}`))
-  .catch(err => console.log(`erro: ${err.message}`));
+// sumMultiply(10,20,30)
+//   .then(result => console.log(`sucesso: ${result}`))
+//   .catch(err => console.log(`erro: ${err.message}`));
+
+module.exports = sumMultiply ;
