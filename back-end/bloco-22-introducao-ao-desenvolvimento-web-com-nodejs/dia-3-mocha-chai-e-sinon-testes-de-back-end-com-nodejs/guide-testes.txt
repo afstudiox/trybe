@@ -1,0 +1,3 @@
+Receberá um parâmetro com o nome do arquivo a ser lido. Esse arquivo deverá estar na pasta io-files;
+Caso o arquivo solicitado exista, responderá uma string com o conteúdo do arquivo;
+Caso o arquivo solicitado não exista, deverá responder null.
