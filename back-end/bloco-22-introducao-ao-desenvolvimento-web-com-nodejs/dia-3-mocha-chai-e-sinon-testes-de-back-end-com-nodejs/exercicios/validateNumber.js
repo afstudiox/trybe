@@ -1,15 +1,17 @@
 const validateNumber = (number) => {
-  try {
-    if (number > 0) {
-      return "positivo"
-    } else if ( number <0 ) {
-      return "negativo"
-    } else {
-      return "neutro"
+    if (typeof number !== 'number') {
+      return "o parâmetro deve ser um número";
     }
-  } catch (erro){
-    return erro
-  }
+  
+    if (number > 0) {
+      return "positivo";
+    }
+    
+    if ( number <0 ) {
+      return "negativo";
+    } 
+
+    return "neutro";
 }
 
 module.exports = validateNumber;

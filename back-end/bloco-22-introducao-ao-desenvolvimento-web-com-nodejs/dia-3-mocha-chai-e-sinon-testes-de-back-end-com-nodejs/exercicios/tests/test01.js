@@ -34,4 +34,18 @@ describe('Verifica Números', () => {
       });
     });
   });
+
+  describe('Não é um número', () => {
+    describe('a resposta', () => {
+      it('é uma "string"', () => {
+        const validate = validateNumber('AAAA');
+        expect(validate).to.be.a('string');
+      })
+
+      it('é igual a "o parâmetro deve ser um número"', () => {
+        const validate = validateNumber('AAA');
+        expect(validate).to.be.equals('o parâmetro deve ser um número');
+      });
+    });
+  });
 });
