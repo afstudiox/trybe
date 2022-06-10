@@ -1,48 +1,48 @@
 const { expect } = require('chai');
 const validateNumber = require('../validateNumber.js')
 
-describe('Verifica Números', () => {
-  describe('É um número positivo', () => {
-    describe('a resposta', () => {
+describe('Check Numbers', () => {
+  describe("It's a positive number", () => {
+    describe('the answer', () => {
       const validate = validateNumber(10);
-      it('é uma string', () => {
+      it('is a string', () => {
         expect(validate).to.be.a('string');
       })
-      it('é igual a "positivo"', ()=> {
+      it('is equal to "positivo"', ()=> {
         expect(validate).to.be.equal('positivo');
       });
     });
   });
   
-  describe('É um numero negativo', () => {
-    describe('a resposta', () => {
+  describe("It's a negative number", () => {
+    describe('the answer', () => {
       const validate = validateNumber(-10);
-      it('é uma string', () => {
+      it('is a string', () => {
         expect(validate).to.be.a('string');
       })
-      it('é igual a "negativo"', ()=> {
+      it('is equal to "negativo"', ()=> {
         expect(validate).to.be.equal('negativo');
       });
     });
   });
 
-  describe('É um número neutro', () => {
-    describe('a resposta', () => {
+  describe('Is a neutral number', () => {
+    describe('the answer', () => {
       const validate = validateNumber(0);
-      it('é igual a "neutro"', () => {
+      it('is equal to "neutro"', () => {
         expect(validate).to.be.equal('neutro');
       });
     });
   });
 
-  describe('Não é um número', () => {
-    describe('a resposta', () => {
-      it('é uma "string"', () => {
+  describe("It´s not a number", () => {
+    describe('the answer', () => {
+      it('is a string"', () => {
         const validate = validateNumber('AAAA');
         expect(validate).to.be.a('string');
       })
 
-      it('é igual a "o parâmetro deve ser um número"', () => {
+      it('is equal to "o parâmetro deve ser um número"', () => {
         const validate = validateNumber('AAA');
         expect(validate).to.be.equals('o parâmetro deve ser um número');
       });
