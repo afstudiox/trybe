@@ -26,6 +26,16 @@ app.get('/drinks', function (req, res) {
   res.json(drinks);
 });
 
+app.get('/recipes/search', function(req, res) {
+  const { name, maxPrice, minPrice } = req.query;
+  const filteredRecipes = recipes
+    .filter((recipes) => recipes.name
+    .includes(name) && 
+    recipes.price < Number(maxPrice) &&
+    recipes.price >= Number(minPrice));
+  res.status(200).json(filteredRecipes);
+});
+
 app.get('/recipes/:id', function (req, res) {
   const { id } = req.params;
   const recipe = recipes.find((recipe) => recipe.id === Number(id));
@@ -33,6 +43,13 @@ app.get('/recipes/:id', function (req, res) {
   if (!recipe) return res.status(404).json({message: 'Recipe not Found'}); 
 
   res.status(200).json(recipe);
+});
+
+app.get('/drinks/search', function(req,res) {
+  const { name } = req.query;
+  const filteredDrinks = drinks
+    .filter((drink) => drink.name.includes(name));
+  res.status(200).json(filteredDrinks);
 });
 
 app.get('/drinks/:id', function (req, res) {
@@ -43,6 +60,7 @@ app.get('/drinks/:id', function (req, res) {
 
   res.status(200).json(drink);
 });
+
 
 
 
