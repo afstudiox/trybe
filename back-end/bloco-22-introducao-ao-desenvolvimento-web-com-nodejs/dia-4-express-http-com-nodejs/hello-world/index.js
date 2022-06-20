@@ -1,7 +1,11 @@
 /* index.js */
 const express = require('express');
-const app = express();
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const app = express();
+
+app.use(cors())
+app.use(bodyParser.json());
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
@@ -18,6 +22,7 @@ const drinks = [
 	{ id: 6, name: 'Água Mineral 500 ml', price: 5.0 },
 ];
 
+// Rotas GET
 app.get('/recipes', function (req, res) {
   res.json(recipes);
 });
@@ -55,17 +60,26 @@ app.get('/drinks/search', function(req,res) {
 app.get('/drinks/:id', function (req, res) {
   const { id } = req.params;
   const drink = drinks.find((drink) => drink.id === Number(id));
-
   if (!drink) return res.status(404).json({message: 'Drink not Found'}); 
-
   res.status(200).json(drink);
 });
 
+// Rotas POST
+app.post('/recipes', function (req,res) {
+  const { id, name, price, waitTime } = req.body;
+  recipes.push({ id, name, price, waitTime});
+  res.status(201).json({ message: 'Recipe created successfully!'});
+});
+
+app.post('/drinks', function (req, res) {
+  const { id, name, price } = req.body;
+  drinks.push({ id, name, price });
+  res.status(201).json({ message: 'Drink created successfully!'});
+});
 
 
 
 app.listen(3001, () => {
-  console.log('Aplicação ouvindo na porta 3001');
+  console.log('Aplicação ouvindo na porta 3001!');
 });
 
-app.use(cors())
