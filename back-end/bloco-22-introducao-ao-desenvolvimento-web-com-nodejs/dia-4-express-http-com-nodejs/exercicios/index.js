@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs/promises');
+const crypto = require('crypto');
 const bodyParser = require('body-parser');
 const { error } = require('console');
 const { fdatasyncSync } = require('fs');
@@ -44,6 +45,10 @@ app.put('/users/:name/:age', (req, res) => {
 })
 
 // ======================================================================================================
+// Adicione autenticação a todos os endpoints.
+// O token deve ser enviado através do header Authorization.
+// O token deve ter exatamente 16 caracteres.
+// Caso o token seja inválido ou inexistente, a resposta deve possuir o status 401 - Unauthorized e o JSON { message: 'Token inválido!' }.
 app.use(authMiddleware);
 
 // Crie um endpoint GET /simpsons 🚀
@@ -98,10 +103,23 @@ app.post('/simpsons', async (req, res) => {
   }
 });
 
-// Adicione autenticação a todos os endpoints.
-// O token deve ser enviado através do header Authorization.
-// O token deve ter exatamente 16 caracteres.
-// Caso o token seja inválido ou inexistente, a resposta deve possuir o status 401 - Unauthorized e o JSON { message: 'Token inválido!' }.
+// Crie uma rota POST /signup
+// A rota deve receber, no body da requisição, os campos email, password, firstName e phone.
+// Caso algum dos campos não esteja preenchido, a response deve possuir status 401 - Unauthorized e o JSON { message: 'missing fields' }.
+// Caso todos os parâmetros estejam presentes, a rota deve gerar um token aleatório válido, e a resposta deve conter o status 200 - OK, 
+// e o JSON { token: '<token-aleatorio>' }.
+app.post ('/signup', (req, res) => {
+  try {
+    const { email, password, firstName, phone } = req.body;
+    if ([email, password, firstName, phone].includes(undefined)) {
+      return res.status(401).json({ message: 'missing fields'});
+    }
+    const token = crypto.randomBytes(8).toString('hex');
+    return res.status(200).json({token});
 
+  } catch (error) {
+    return res.status(500).end();
+  }
+})
 
 app.listen(PORT, () => console.log('Rodando na porta 3002'));
