@@ -3,9 +3,11 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const app = express();
+const authMiddleware = require('./auth-middleware');
 
 app.use(cors())
 app.use(bodyParser.json());
+app.use(authMiddleware);
 
 const recipes = [
   { id: 1, name: 'Lasanha', price: 40.0, waitTime: 30 },
