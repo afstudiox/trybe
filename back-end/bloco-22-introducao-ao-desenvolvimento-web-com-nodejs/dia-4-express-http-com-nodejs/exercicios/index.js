@@ -1,6 +1,8 @@
 const express = require('express');
 const cors = require('cors');
+const fs = require('fs/promises');
 const bodyParser = require('body-parser');
+const { error } = require('console');
 const app = express();
 const PORT = 3002;
 
@@ -37,5 +39,15 @@ app.put('/users/:name/:age', (req, res) => {
   const { name, age } = req.params;
   res.status(200).json({ message: `Seu nome é ${name} e você tem ${age} anos de idade`});
 })
+
+// Crie um endpoint GET /simpsons 🚀
+// O endpoint deve retornar um array com todos os simpsons.
+app.get('/simpsons', async (req, res) => {
+  const readSimpson = await fs.readFile('./simpsons.json');
+  if (!readSimpson) return res.status(500).json();
+  const simpsons = JSON.parse(readSimpson); 
+  res.status(200).json(simpsons);
+})
+
 
 app.listen(PORT, () => console.log('Rodando na porta 3002'));
