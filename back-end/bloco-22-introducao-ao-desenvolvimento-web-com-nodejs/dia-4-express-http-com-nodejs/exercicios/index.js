@@ -13,4 +13,12 @@ app.get('/', (_req, res) => res.send('Você esta acessando a rota principal "/"'
 // Sua rota deve retornar o seguinte JSON: { message: 'pong' }
 app.get('/ping', (req, res) => res.status(200).json({ message: 'pong'}));
 
+// Crie uma rota POST /hello
+// Sua rota deve receber, no body da requisição, o seguinte JSON: { "name": "<nome do usuário>" }
+// Sua rota deve retornar o seguinte JSON: { "message": "Hello, <nome do usuário>!" }.
+app.post('/hello', (req,res) => {
+  const { name } = req.body;
+  res.status(200).json({ message: `Hello, ${name}`});
+})
+
 app.listen(PORT, () => console.log('Rodando na porta 3002'));
