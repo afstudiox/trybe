@@ -3,6 +3,7 @@ const cors = require('cors');
 const fs = require('fs/promises');
 const bodyParser = require('body-parser');
 const { error } = require('console');
+const { fdatasyncSync } = require('fs');
 const app = express();
 const PORT = 3002;
 
@@ -60,5 +61,24 @@ app.get('/simpsons/:id', async (req, res) => {
     if (!simpson) return res.status(404).json({ message: 'simpson not found'});
   res.status(200).json(simpson);
 })
+
+// Crie um endpoint POST /simpsons. 🚀
+// Este endpoint deve cadastrar novos personagens.
+// O corpo da requisição deve receber o seguinte JSON: { id: <id-da-personagem>, name: '<nome-da-personagem>' }.
+// Caso já exista uma personagem com o id informado, devolva o JSON { message: 'id already exists' } com o status 409 - Conflict.
+// Caso a personagem ainda não exista, adicione-a ao arquivo simpsons.json e devolva um body vazio com o status 204 - No Content. 
+// Para encerrar a request sem enviar nenhum dado, você pode utilizar res.status(204).end();.
+app.post('/simpsons', async (req, res) => {
+  const readSimpson = await fs.readFile('./simpsons.json');
+  const simpsons = JSON.parse(readSimpson); 
+  const { id, name } = req.body;
+  const simpson = simpsons.find((s) => s.id == Number(id));
+    if(simpson) return res.status(409).json({ message: `o id ${id} already exist`});
+  const newSimpson = {id: id, name: name};
+  simpsons.push(newSimpson);
+  const simpsonsToStr = JSON.stringify(simpsons);
+  await fs.writeFile('./simpsons.json', simpsonsToStr);
+  res.status(204).end();
+});
 
 app.listen(PORT, () => console.log('Rodando na porta 3002'));
