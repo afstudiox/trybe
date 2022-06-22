@@ -32,6 +32,15 @@ const validateName = (req, res, next) => {
   next();
 };
 
+// 🚀 Crie uma função validatePrice para validar se o preço foi enviado. 
+// O preço deve ser obrigatório, deve ser um número e não pode ser menor que 0. 
+// Aplique essa função como um middleware nas rotas POST /recipes e PUT /recipes/:id.
+const validatePrice = (req, res, next) => {
+  const { price } = req.body;
+  if (typeof(price) !== 'number' || price <= 0) return res.status(400).json({ message: 'Invalid price!'});
+  next();
+};
+
 // Rota Geral
 app.get('/', (_req, res) => {
   res.status(200).json({ message: 'Você esta na rota principal!'});
@@ -86,7 +95,7 @@ app.get('/drinks/:id', function (req, res) {
 });
 
 // Rotas POST
-app.post('/recipes', validateName, function (req,res) {
+app.post('/recipes', validateName, validatePrice, function (req,res) {
   const { id, name, price, waitTime } = req.body;
   recipes.push({ id, name, price, waitTime});
   res.status(201).json({ message: 'Recipe created successfully!'});
@@ -99,7 +108,7 @@ app.post('/drinks', function (req, res) {
 });
 
 // Rotas PUT
-app.put('/recipes/:id',  validateName, (req, res) => {
+app.put('/recipes/:id',  validateName, validatePrice, (req, res) => {
   const { id } = req.params;
   const { name, price } = req.body;
   const recipeIndex = recipes.findIndex((recipe) => recipe.id === Number(id));
