@@ -22,11 +22,16 @@ app.get('/authors/:id', async (req, res) => {
 
 app.get('/books', async (req, res) => {
   const { author_id } = req.query;
-  
   const books = (author_id)
   ? await Book.getByAuthorId(author_id)
   : await Book.getAll();
+  res.status(200).json(books);
+})
 
+app.get('/books/:id', async (req,res) => {
+  const { id } = req.params;
+  const books = await Book.findById(id);
+  if(!books) return res.status(400).json({ message: 'Not found'});
   res.status(200).json(books);
 })
 

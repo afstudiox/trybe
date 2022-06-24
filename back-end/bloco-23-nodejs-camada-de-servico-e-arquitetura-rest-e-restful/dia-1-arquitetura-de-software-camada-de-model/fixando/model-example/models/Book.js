@@ -9,7 +9,17 @@ const connection = require('./connection');
       title,
       authorId: author_id,
     }));
-  
+  };
+
+  const findById = async (id) => {
+    const query = 'SELECT * FROM model_example.books WHERE id=?;';
+    const [ booksData ] = await connection.execute(query, [id]);
+    if ( booksData.length === 0) return null;
+    return booksData.map(({id, title, author_id}) => ({
+      id,
+      title,
+      authorId: author_id,
+    }))[0];
   };
 
   const getAll = async () => {
@@ -27,6 +37,7 @@ const connection = require('./connection');
 
 module.exports = {
 	getAll,
-  getByAuthorId
+  getByAuthorId,
+  findById
 };
 
