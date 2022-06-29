@@ -1,20 +1,21 @@
 const { Router } = require('express');
+const cepController = require('../Controllers/cepController');
 
 const cepRoutes = Router();
 
-// removeUser
+// removeCEP
 cepRoutes.delete('/:cep', async (_req, _res) => { });
 
-// editUser
+// editCEP
 cepRoutes.put('/:cep', async (_req, _res) => { });
 
-// getUser
-cepRoutes.get('/:cep', async (_req, _res) => { });
+// getCEP
+cepRoutes.get('/:cep', cepController.get);
 
-// addUser
+// addCEP
 cepRoutes.post('/', async (_req, _res) => { });
 
-// listUsers
-cepRoutes.get('/', async (_req, _res) => { });
+// listCEP
+cepRoutes.get('/', cepController.getAll);
 
 module.exports = cepRoutes;
