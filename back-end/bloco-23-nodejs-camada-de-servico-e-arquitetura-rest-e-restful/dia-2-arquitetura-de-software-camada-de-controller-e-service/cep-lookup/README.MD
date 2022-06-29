@@ -1,18 +1,13 @@
 ### **Agora, a prática**
+#
 
-> 🚀 Se liga nesse foguete!
-> 
-> 
-> Os exercícios destacados com 🚀 são os fundamentais pra você ir bem no projeto! Todos os exercícios vão contribuir com sua formação mas fique de olho nesses! 👀
-> 
 
 🚀 Você vai desenvolver uma aplicação de busca de CEP, chamada `cep-lookup`. A aplicação fornecerá um serviço de busca e cadastro de CEPs em um banco de dados. Como bônus, em vez de cadastrar novos CEPs manualmente, a aplicação consultará uma API externa para obter os dados do CEP desejado.
 
 Utilize o banco de dados MySQL e execute a seguinte query para criar o banco e a tabela:
 
-Copiar
-
-`CREATE DATABASE IF NOT EXISTS cep_lookup;
+```
+CREATE DATABASE IF NOT EXISTS cep_lookup;
 
 USE cep_lookup;
 
@@ -24,10 +19,9 @@ CREATE TABLE IF NOT EXISTS ceps (
   uf VARCHAR(2) NOT NULL,
   PRIMARY KEY (cep)
 );`
+```
 
-Bons estudos!
-
-### **Exercício 1**
+## **Exercício 1**
 
 - Crie uma nova API utilizando o express
     - A aplicação deve ser um pacote Node.js;
@@ -35,7 +29,7 @@ Bons estudos!
     - Utilize o express para gerenciar os endpoints da sua aplicação;
     - A aplicação deve ter a rota `GET /ping`, que retorna o status `200 OK` e o seguinte JSON:
 
-Copiar
+[ ]
 
 `{ "message": "pong!" }`
 
