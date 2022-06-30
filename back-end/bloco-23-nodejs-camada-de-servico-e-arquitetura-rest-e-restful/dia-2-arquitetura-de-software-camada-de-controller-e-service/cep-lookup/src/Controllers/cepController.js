@@ -2,19 +2,40 @@
 const cepService = require('../Services/cepService');
 
 const cepController = {
-  // envia para o service o cep por parametro 
-  // retorna para o cliente o item encontrado no banco
+  
   async get(req, res) {
+    // pega a chave cep do parametro
     const { cep } = req.params;
-    const item = await cepService.get(cep);
-    res.json(item);
+    
+    // solicita ao service a validação do parametro 
+    // enviado pelo cliente
+    await cepService.validateParamsCep({ cep });
+    
+    // metodo para remover o (hifen) do CEP
+    const cepNumber = cep.replace('-', '');
+    
+    // solicita ao service que verifique se o CEP
+    // sem o hifen existe no banco
+    await cepService.exists(cepNumber);
+    
+    // solicita aos service os dados referentes 
+    // ao CEP já validade e verificado no banco
+    const item = await cepService.get(cepNumber);
+    
+    // devolve ao cliente os dados referentes ao CEP
+    res.status(200).json(item);
   },
-  // envia para para o service a solicitacao de busca de todos os ceps
-  // retorna para o cliente os items cadastrados no banco
+
   async getAll(_req, res) {
+    // traga-me todos as informações encontrada no banco de dados
     const items = await cepService.getAll();
+    // retorne esses dados para o cliente
     res.json(items);
   },
 };
 
 module.exports = cepController;
+
+// const result = schema.validate(unknown);
+// console.log('result >', result);
+// return result;)

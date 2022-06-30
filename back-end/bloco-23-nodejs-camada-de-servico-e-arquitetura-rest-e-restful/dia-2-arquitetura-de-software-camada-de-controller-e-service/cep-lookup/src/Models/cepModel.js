@@ -2,6 +2,13 @@
 const db = require('./connection');
 
 const cepModel = {
+  // verifica a existência do cep no banco 
+  // retorna um booleano da resposta
+  async exists(cep) {
+    const existSql = 'SELECT 1 FROM ceps WHERE cep = ?';
+    const [[exists]] = await db.query(existSql, [cep]);
+    return !!exists;
+  },
   // busca cep por ID direatmente no banco de dados
   // retorna o item encontrado para o service
   async get(cep) {

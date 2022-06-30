@@ -1,15 +1,42 @@
-// conexao com o model 
+const Joi = require('joi');
 const cepModel = require('../Models/cepModel');
+const runSchema = require('../Middlewares/validations');
+
+// regex que valida cep com (hifen) ou não
+const REGEX_CEP = /^\d{5}-?\d{3}$/;
+
+// dispara erro quando caso cep não seja encontrado
+const throwNotFoundError = (message, code) => {
+  const error = new Error(message, code);
+  error.name = 'NotFoundError';
+  error.code = 404;
+  throw error;
+}; 
 
 const cepService = {
-  // solicita ao model a busca do cep no banco
-  // retorna a resposta do model para o controller
+  
+  // valida se o parametro passado é um dep válido
+  validateParamsCep: runSchema(
+    Joi.object({
+      cep: Joi.string().regex(REGEX_CEP).required(),
+    }),
+  ),
+  
+  // solicita a verificação no banco para verificar se o cep existe
+  // caso não exista ele chama a função de erro
+  async exists(cep) {
+    const exists = await cepModel.exists(cep);
+    if (!exists) throwNotFoundError('CEP não encontrado');
+    return exists;
+  },
+  
+  // solicita os dados referentes ao cep solicitado
   async get(cep) {
     const item = await cepModel.get(cep);
     return item;
   },
-  // solicita ao model a busca de todos os ceps cadastrados no banco 
-  // retorna a resposta do model para o controller
+
+  // solicita todos os dados do banco
   async getAll() {
     const items = await cepModel.getAll();
     return items;
