@@ -23,6 +23,15 @@ const cepModel = {
     const [items] = await db.query(sql);
     return items;
   },
+
+  async post(data) {
+    const sql = 'INSERT INTO '
+    + 'ceps(cep,logradouro,bairro,localidade,uf) '
+    + 'VALUES '
+    + '(?)';
+    const [{ insertId }] = await db.query(sql, [data]);
+    return insertId;
+  },
 };
 
 module.exports = cepModel;

@@ -32,6 +32,21 @@ const cepController = {
     // retorne esses dados para o cliente
     res.json(items);
   },
+
+  async post(req, res) {
+    // coleta os dados do body
+    const { cep, logradouro, bairro, localidade, uf } = req.body;
+    // metodo para remover o (hifen) do CEP
+    console.log({ cep, logradouro, bairro, localidade, uf });
+    const cepNumber = cep.replace('-', '');  
+    // solicita ao service a validação do body coletado
+    await cepService.validateBody({ cepNumber, logradouro, bairro, localidade, uf });
+    // solicita ao service que envie os dados validados para a gravação no banco
+    const result = await cepService.post([cepNumber, logradouro, bairro, localidade, uf]);
+    // devolve ao cliente os dados gravados no banco
+    res.status(201).json(result);
+  },
+
 };
 
 module.exports = cepController;

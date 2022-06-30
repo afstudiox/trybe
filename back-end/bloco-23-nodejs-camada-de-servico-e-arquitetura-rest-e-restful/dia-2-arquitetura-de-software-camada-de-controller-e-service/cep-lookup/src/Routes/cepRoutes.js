@@ -18,7 +18,7 @@ cepRoutes.put('/:cep', async (_req, _res) => { });
 cepRoutes.get('/:cep', cepController.get);
 
 // addCEP
-cepRoutes.post('/', async (_req, _res) => { });
+cepRoutes.post('/', cepController.post);
 
 // listCEP
 // rota que busca todos os ceps cadastrados

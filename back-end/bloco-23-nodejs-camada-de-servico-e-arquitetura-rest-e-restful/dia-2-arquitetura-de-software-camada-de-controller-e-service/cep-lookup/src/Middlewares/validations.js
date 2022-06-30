@@ -6,6 +6,10 @@ const runSchema = (schema) => async (unknown) => {
         error.code = 400;
         error.message = 'Cep Inválido';
         throw error;
+      // case 'string.pattern.base':
+      //   error.code = 400;
+      //   error.message = 'Cep Inválido';
+      //   throw error;
       default:
         break;
     } 

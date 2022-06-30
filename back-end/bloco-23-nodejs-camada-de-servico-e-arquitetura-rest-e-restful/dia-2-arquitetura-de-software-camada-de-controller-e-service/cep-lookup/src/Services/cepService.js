@@ -14,16 +14,23 @@ const throwNotFoundError = (message, code) => {
 }; 
 
 const cepService = {
-  
   // valida se o parametro passado é um dep válido
   validateParamsCep: runSchema(
     Joi.object({
       cep: Joi.string().regex(REGEX_CEP).required(),
     }),
   ),
+
+  validateBody: runSchema(
+    Joi.object({
+      cep: Joi.string().regex(REGEX_CEP).required(),
+      logradouro: Joi.string().required(),
+      bairro: Joi.string().required(),
+      localidade: Joi.string().required(),
+      uf: Joi.string().required(),
+    }),
+  ),
   
-  // solicita a verificação no banco para verificar se o cep existe
-  // caso não exista ele chama a função de erro
   async exists(cep) {
     const exists = await cepModel.exists(cep);
     if (!exists) throwNotFoundError('CEP não encontrado');
@@ -40,6 +47,13 @@ const cepService = {
   async getAll() {
     const items = await cepModel.getAll();
     return items;
+  },
+
+  // solicita a verificação no banco para verificar se o cep existe
+  // caso não exista ele chama a função de erro
+  async post(data) {
+    const result = await cepModel.post(data);
+    return result;
   },
 };
 
