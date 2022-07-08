@@ -1,6 +1,6 @@
 const { Book } = require('../database/models');
 
-const booksServices = {
+const booksService = {
   list: async () => {
     const books = await Book.findAll();
     console.log('service', books)
@@ -12,4 +12,4 @@ const booksServices = {
   }
 }
 
-module.exports = booksServices;
+module.exports = booksService;

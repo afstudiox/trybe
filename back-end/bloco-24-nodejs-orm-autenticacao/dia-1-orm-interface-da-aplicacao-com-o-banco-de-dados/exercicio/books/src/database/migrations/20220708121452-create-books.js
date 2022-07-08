@@ -2,14 +2,14 @@
 
 module.exports = {
   up: async  (queryInterface, Sequelize) => {
-    const BooksTable = queryInterface.createTable("Books", {
-      id:{
+    await queryInterface.createTable('Books', {
+      id: {
         allowNull: false,
         primaryKey: true,
         autoIncrement: true,
         type: Sequelize.INTEGER
       },
-      title:{
+      title: {
         allowNull: false,
         type: Sequelize.STRING
       },
@@ -19,21 +19,24 @@ module.exports = {
       },
       pageQuantity: {
         allowNull: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        field: 'page_quantity',
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        field: 'created_at',
+
       },
       updateAt:{
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
+        field: 'updated_at',
       },
     })
-    return BooksTable;
   },
 
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable("Books");
+    await queryInterface.dropTable("Books");
   }
 };
