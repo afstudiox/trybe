@@ -1,4 +1,4 @@
-const { Book } = require('./src/database/models');
+const { Book } = require('../database/models');
 
 const booksServices = {
   list: async () => {
