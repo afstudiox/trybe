@@ -6,3 +6,5 @@ const booksServices = {
     return books;
   }
 }
+
+module.exports = booksServices;
