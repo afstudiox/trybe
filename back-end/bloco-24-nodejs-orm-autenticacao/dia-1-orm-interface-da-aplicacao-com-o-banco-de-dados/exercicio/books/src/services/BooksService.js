@@ -13,6 +13,13 @@ const booksService = {
   create: async ({title,  author, pageQuantity}) => {
     const book = await Book.create({title,  author, pageQuantity});
     return book;
+  },
+  update: async ({title, author, pageQuantity},id) => {
+    const book = await Book.update({title, author, pageQuantity},{ where: id });
+    return book;
+  },
+  exists: async (id) => {
+
   }
 }
 
