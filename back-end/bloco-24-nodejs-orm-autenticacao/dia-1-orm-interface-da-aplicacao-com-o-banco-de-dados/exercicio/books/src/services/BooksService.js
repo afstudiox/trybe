@@ -18,8 +18,9 @@ const booksService = {
     const book = await Book.update({title, author, pageQuantity},{ where: id });
     return book;
   },
-  exists: async (id) => {
-
+  delete: async (id) => {
+    const book = await Book.findByPk(id);
+    book.destroy();
   }
 }
 

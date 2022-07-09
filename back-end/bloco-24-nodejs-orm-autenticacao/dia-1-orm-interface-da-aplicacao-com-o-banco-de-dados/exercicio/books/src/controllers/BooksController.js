@@ -22,6 +22,10 @@ const booksController = {
     if (!book) return res.status(404).json({ message: "Book not found"});
     await booksService.update({title,  author, pageQuantity},{id});
     res.status(200).json({ message: "Book Updated!"}) 
+  },
+  delete: async (req,res) => {
+    const { id } = req.params;
+    await booksService.delete(id)
   }
 }
 
