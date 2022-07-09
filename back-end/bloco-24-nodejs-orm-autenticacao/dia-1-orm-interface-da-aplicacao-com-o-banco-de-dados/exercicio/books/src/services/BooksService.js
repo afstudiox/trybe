@@ -22,11 +22,11 @@ const booksService = {
     return books;
   },
   create: async ({title,  author, pageQuantity}) => {
-    const book = await Book.create({title,  author, pageQuantity});
+    const book = await Book.create({title,  author, pageQuantity, publisher});
     return book;
   },
   update: async ({title, author, pageQuantity},id) => {
-    const book = await Book.update({title, author, pageQuantity},{ where: id });
+    const book = await Book.update({title, author, pageQuantity, publisher},{ where: id });
     return book;
   },
   delete: async (id) => {
