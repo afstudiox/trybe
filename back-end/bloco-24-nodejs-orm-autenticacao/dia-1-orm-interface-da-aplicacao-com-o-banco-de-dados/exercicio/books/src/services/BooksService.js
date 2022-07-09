@@ -2,7 +2,9 @@ const { Book } = require('../database/models');
 
 const booksService = {
   list: async () => {
-    const books = await Book.findAll();
+    const books = await Book.findAll({
+      order:[ 
+      ['title', 'ASC']]});
     return books;
   },
   getById: async (id) => {
@@ -10,7 +12,13 @@ const booksService = {
     return book;
   },
   getByAuthor: async (author) => {
-    const books = await Book.findAll({ where: { author: author }});
+    const books = await Book.findAll({
+      where: {
+        author: author},
+      order:[
+        ['title', 'ASC']
+      ]
+    });
     return books;
   },
   create: async ({title,  author, pageQuantity}) => {
