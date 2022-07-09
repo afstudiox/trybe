@@ -3,12 +3,15 @@ const { Book } = require('../database/models');
 const booksService = {
   list: async () => {
     const books = await Book.findAll();
-    console.log('service', books)
     return books;
   },
   getById: async (id) => {
     const book = await Book.findByPk(id)
     return book;
+  },
+  getByAuthor: async (author) => {
+    const books = await Book.findAll({ where: { author: author }});
+    return books;
   },
   create: async ({title,  author, pageQuantity}) => {
     const book = await Book.create({title,  author, pageQuantity});
