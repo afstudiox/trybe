@@ -1,6 +1,7 @@
-// funcao para criar o menu de estados 
 const uf = document.querySelector('#uf');
+const btnEnviar = document.querySelector('#btnEnviar');
 
+// funcao para criar o menu de estados 
 function criaUF(){
     let ufBrasil = [
         'Acre',
@@ -40,12 +41,47 @@ function criaUF(){
 }
 criaUF();
 
+// Função para mostrar os dados do formulário a ser enviado
+function renderData(event){
+  event.preventDefault();
+  const InputNome = document.querySelector('#nome');
+  const pNome = document.querySelector('#pNome');
+  pNome.innerHTML = InputNome.value;
 
-const dtInicio = document.querySelector('dt-inicio');
+  const inputEmail = document.querySelector('#email');
+  const pEmail = document.querySelector('#pEmail');
+  pEmail.innerHTML = inputEmail.value;
 
-function validaData(){
-    console.log(dtInicio.value)
+  const InputCpf = document.querySelector('#cpf');
+  const pCpf = document.querySelector('#pCpf');
+  pCpf.innerHTML = InputCpf.value;
+
+  const inputEndereco = document.querySelector('#endereco');
+  const pEndereco = document.querySelector('#pEndereco');
+  pEndereco.innerHTML = inputEndereco.value;
+
+  const selectUf = document.querySelector('#uf') ;
+  const pUf = document.querySelector('#pUf');
+  pUf.innerHTML = selectUf.value;
+
+  const radioTipo = document.querySelector('input[name="tipo"]:checked');
+  const pTipo = document.querySelector('#pTipo');
+  pTipo.innerHTML = radioTipo.value;
+
+  const txtResumo = document.querySelector('#resumo-curriculo');
+  const pResumo = document.querySelector('#pResumo');
+  pResumo.innerHTML = txtResumo.value;
+
+  const inputCargo = document.querySelector('#desc-cargo');
+  const pCargo = document.querySelector('#pCargo');
+  pCargo.innerHTML = inputCargo.value;
+
+  const inputDataInicio = document.querySelector('#dt-inicio')
+  const pDataInicio = document.querySelector('#pDataInicio');
+  pDataInicio.innerHTML = inputDataInicio.value;  
+  
 }
 
-dtInicio.addEventListener('keypress', validaData);
+// evento escutador do botão para ativar a renderização dos dados
+btnEnviar.addEventListener('click', renderData);
 

@@ -10,7 +10,7 @@
 <body>
 
     <main>
-        <form action="">
+        <form action="post">
             <fieldset><legend>Cadastro de Currículo</legend>
                 <label for="nome">Nome</label>
                 <input id="nome" name="nome" type="text" maxlength="40" required>
@@ -22,18 +22,33 @@
                 <input id="endereco" name="endereco" type="text" maxlength="200" required>
                 <label for="uf">Estado</label>
                 <select name="uf" id="uf"></select>
-                <label for="casa"><input id="casa" name="tipo" type="radio">Casa</label>
-                <label for="apto"><input id="apto" name="tipo" type="radio">Apartamento</label>
+                <label for="tipo">
+                  <input id="casa" name="tipo" type="radio" value="Casa">Casa
+                  <input id="apto" name="tipo" type="radio" value="Apartamento">Apartamento
+                </label>
             </fieldset>
 
             <fieldset><legend>Seu último emprego</legend>
-                <label for="Resumo do Currículo"><textarea id="resumo-curriculo" maxlength="1000" required></textarea></label>
+                <label for="Resumo do Currículo">Resumo do Currículo<textarea id="resumo-curriculo" maxlength="1000" required></textarea></label>
                 <label for="cargo">Cargo<input id="cargo" name="cargo" type="text"></label>
                 <label for="desc-cargo">Descrição do cargo<input id="desc-cargo" name="desc-cargo" type="text"></label>
                 <label for="dt-inicio">Data de Início<input value="25/12/1977" id="dt-inicio" name="dt-inicio" type="text"></label>
-                
             </fieldset>
+
+            <button id="btnEnviar"type="submit">Enviar</button>
+            <button id="btnReset" type="reset">Apagar</button>
         </form>
+        <section>
+          <p id="pNome"></p>
+          <p id="pEmail"></p>
+          <p id="pCpf"></p>
+          <p id="pEndereco"></p>
+          <p id="pUf"></p>
+          <p id="pTipo"></p>
+          <p id="pResumo"></p>
+          <p id="pCargo"></p>
+          <p id="pDataInicio"></p>
+        </section>
     </main>
     
     <script src="script.js"></script>
