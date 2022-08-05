@@ -34,3 +34,5 @@ console.log(andre);
 
 console.log('A soma das notas é ', andre.somaNotas());
 console.log('A média das notas é ', andre.mediaNotas());
+
+
