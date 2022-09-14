@@ -8,7 +8,8 @@ describe('Lens Model', () => {
   const lensModel = new LensModel();
 
   before(() => {
-    sinon.stub(Model, 'create').resolves(lensMockWithId)
+    sinon.stub(Model, 'create').resolves(lensMockWithId);
+    sinon.stub(Model, 'findOne').resolves(lensMockWithId);
   });
 
   after(() => {
@@ -20,6 +21,21 @@ describe('Lens Model', () => {
       const newLens = await lensModel.create(lensMock);
       expect(newLens).to.be.deep.equal(lensMockWithId);
     });
+  })
+
+  describe('searching lens', () => {
+    it('sucessfully found', async () => {
+      const lensFound = await lensModel.readOne('62cf1fc6498565d94eba52cd');
+      expect(lensFound).to.be.deep.equal(lensMockWithId);
+    });
+
+    it('_id not found', async () => {
+      try {
+        await lensModel.readOne('123errado');
+      } catch (error: any) {
+        expect(error.message).to.be.equal("Invalid MongoId");
+      }
+    })
   })
 
 })
