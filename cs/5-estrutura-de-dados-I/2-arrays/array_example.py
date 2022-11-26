@@ -1,9 +1,4 @@
-"""Perceba que temos uma coleção de valores
-e operações que atuam sobre estes valores,
-de acordo com o que foi definido pelo TAD."""
-
 import sys
-
 
 class ListaArray:
     def __init__(self):
