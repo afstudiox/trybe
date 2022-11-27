@@ -1,4 +1,4 @@
-from array_example import ListaArray
+from fixacao.array_example import ListaArray
 
 
 class Matrix(ListaArray):

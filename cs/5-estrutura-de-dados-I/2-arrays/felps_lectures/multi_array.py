@@ -1,4 +1,4 @@
-from array_example import Array
+from fixacao.array_example import Array
 
 
 class Matrix(Array):
